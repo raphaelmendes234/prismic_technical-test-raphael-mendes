@@ -9,6 +9,7 @@ export const components = defineSliceZoneComponents({
     () => import("./CallToAction/index.vue"),
   ),
   faq: defineAsyncComponent(() => import("./Faq/index.vue")),
+  hero: defineAsyncComponent(() => import("./Hero/index.vue")),
   images_carousel: defineAsyncComponent(() => import("./Carousel/index.vue")),
   rich_text: defineAsyncComponent(() => import("./RichText/index.vue")),
   test_slide: defineAsyncComponent(() => import("./LandingPageHero/index.vue")),
