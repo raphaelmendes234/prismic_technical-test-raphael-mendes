@@ -77,11 +77,11 @@ type LandingPageDocumentDataSlicesSlice =
   | TestSlideSlice;
 
 /**
- * Content for Real Estate Prices documents
+ * Content for Landing Page documents
  */
 interface LandingPageDocumentData {
   /**
-   * Title field in *Real Estate Prices*
+   * Title field in *Landing Page*
    *
    * - **Field Type**: Rich Text
    * - **Placeholder**: *None*
@@ -92,7 +92,7 @@ interface LandingPageDocumentData {
   title: prismic.RichTextField;
 
   /**
-   * Introduction field in *Real Estate Prices*
+   * Introduction field in *Landing Page*
    *
    * - **Field Type**: Rich Text
    * - **Placeholder**: *None*
@@ -103,7 +103,7 @@ interface LandingPageDocumentData {
   introduction: prismic.RichTextField;
 
   /**
-   * Slice Zone field in *Real Estate Prices*
+   * Slice Zone field in *Landing Page*
    *
    * - **Field Type**: Slice Zone
    * - **Placeholder**: *None*
@@ -112,7 +112,7 @@ interface LandingPageDocumentData {
    * - **Documentation**: https://prismic.io/docs/slices
    */
   slices: prismic.SliceZone<LandingPageDocumentDataSlicesSlice> /**
-   * Meta Title field in *Real Estate Prices*
+   * Meta Title field in *Landing Page*
    *
    * - **Field Type**: Text
    * - **Placeholder**: A title of the page used for social media and search engines
@@ -123,7 +123,7 @@ interface LandingPageDocumentData {
   meta_title: prismic.KeyTextField;
 
   /**
-   * Meta Description field in *Real Estate Prices*
+   * Meta Description field in *Landing Page*
    *
    * - **Field Type**: Text
    * - **Placeholder**: A brief summary of the page
@@ -134,7 +134,7 @@ interface LandingPageDocumentData {
   meta_description: prismic.KeyTextField;
 
   /**
-   * Meta Image field in *Real Estate Prices*
+   * Meta Image field in *Landing Page*
    *
    * - **Field Type**: Image
    * - **Placeholder**: *None*
@@ -146,7 +146,7 @@ interface LandingPageDocumentData {
 }
 
 /**
- * Real Estate Prices document from Prismic
+ * Landing Page document from Prismic
  *
  * - **API ID**: `landing_page`
  * - **Repeatable**: `true`
