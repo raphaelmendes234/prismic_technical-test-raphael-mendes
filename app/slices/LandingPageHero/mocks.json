@@ -1,0 +1,64 @@
+[
+	{
+		"__TYPE__": "SharedSliceContent",
+		"variation": "default",
+		"primary": {
+			"image": {
+				"origin": {
+					"id": "main",
+					"url": "https://images.unsplash.com/photo-1576662712957-9c79ae1280f8",
+					"width": 3456,
+					"height": 3456
+				},
+				"url": "https://images.unsplash.com/photo-1576662712957-9c79ae1280f8",
+				"width": 3456,
+				"height": 3456,
+				"edit": {
+					"zoom": 1,
+					"crop": {
+						"x": 0,
+						"y": 0
+					},
+					"background": "transparent"
+				},
+				"alt": "process",
+				"credits": null,
+				"__TYPE__": "ImageContent",
+				"thumbnails": {}
+			},
+			"title": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "heading1",
+						"content": {
+							"text": "Rough"
+						}
+					}
+				]
+			},
+			"description": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "paragraph",
+						"content": {
+							"text": "Incididunt cupidatat consectetur eiusmod aute irure eu proident aute culpa aute laboris veniam magna. Ad dolore ullamco eiusmod deserunt. Cillum esse non sit nisi culpa cillum nostrud anim dolore amet ullamco dolore consequat."
+						}
+					}
+				]
+			},
+			"eyebrowheadline": {
+				"__TYPE__": "FieldContent",
+				"value": "tube",
+				"type": "Text"
+			},
+			"date": {
+				"__TYPE__": "FieldContent",
+				"value": "thick",
+				"type": "Text"
+			}
+		},
+		"items": []
+	}
+]
