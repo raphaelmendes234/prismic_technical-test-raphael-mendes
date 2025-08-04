@@ -22,8 +22,11 @@ This project is a technical test for a Frontend Developer apprentice position at
     - I watched the video tutorials on the website, read the documentation and started my project by following the Set up guide with **Nuxt.js**.
     - I created a **Prismic** repository and set up my **Nuxt.js** project with **Slice Machine**.
     - Then I started exploring the tool, creating pages, pages types, playing with the template slices, looking how they were made to get comfortable.
+
 - Then, I started to work : I created a new reusable **Page type** for my landing page in **Slice Machine**.
+
 - I created a new page in the **Page builder** with my new type.
+
 - After that, I had to create every **Slice** that would compose my page, this is how I did it :
     - Created a new **Slice** in **Slice Machine**.
     - Added the needed **Fields** to it (Image, RichText, Link...).
@@ -36,11 +39,11 @@ This project is a technical test for a Frontend Developer apprentice position at
 
 ## 🧩 List of Slices created : 
 
-`LandingPageHero` : The hero section of the landing page with an image, the title of the page and a description.
-`Numbers` : A slice that can display numbers, their unit, title and description in little cards.
-`Carousel` : A carousel of images with a title and desciption.
-`Faq` : A slice to display common questions and their answers in the form of accordions.
-`CallToAction` : A slice with an image, a big text and a button that encourages the users to click.
+- `LandingPageHero` : The hero section of the landing page with an image, the title of the page and a description.
+- `Numbers` : A slice that can display numbers, their unit, title and description in little cards.
+- `Carousel` : A carousel of images with a title and desciption.
+- `Faq` : A slice to display common questions and their answers in the form of accordions.
+- `CallToAction` : A slice with an image, a big text and a button that encourages the users to click.
 
 All slices are modular and reusable across other real estate locations.
 
