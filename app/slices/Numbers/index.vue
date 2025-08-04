@@ -95,10 +95,13 @@ defineProps(
 }
 
 .price-details_content_items-container{
+	max-width: 1016px;
+	box-sizing: border-box;
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
 	align-items: center;
+	flex-wrap: wrap;
 	gap: 1rem;
 }
 .price-details_content_item{
@@ -110,6 +113,7 @@ defineProps(
 	justify-content: center;
 	align-items: center;
     gap: 0.5rem;
+	text-align: center;
     border: 1px solid #333;
     border-radius: 8px;
 	box-shadow: 0px 2px 6px 0px rgb(51, 51, 51, 0.25);
@@ -142,6 +146,9 @@ defineProps(
 @media (min-width: 640px) {
   .price-details_content_items-container{
 	flex-direction: row;
+  }
+  .price-details_content_item{
+	width: 48%;
   }
 }
 </style>
