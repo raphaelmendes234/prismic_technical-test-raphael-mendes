@@ -8,6 +8,9 @@ export const components = defineSliceZoneComponents({
   call_to_action: defineAsyncComponent(
     () => import("./CallToAction/index.vue"),
   ),
+  call_to_action_2: defineAsyncComponent(
+    () => import("./CallToAction2/index.vue"),
+  ),
   faq: defineAsyncComponent(() => import("./Faq/index.vue")),
   hero: defineAsyncComponent(() => import("./Hero/index.vue")),
   images_carousel: defineAsyncComponent(() => import("./Carousel/index.vue")),

@@ -69,6 +69,91 @@ type ContentRelationshipFieldWithData<
   >;
 }[Exclude<TCustomType[number], string>["id"]];
 
+type CustomDemoDocumentDataSlicesSlice = CallToAction2Slice | HeroSlice;
+
+/**
+ * Content for Custom Demo documents
+ */
+interface CustomDemoDocumentData {
+  /**
+   * Slice Zone field in *Custom Demo*
+   *
+   * - **Field Type**: Slice Zone
+   * - **Placeholder**: *None*
+   * - **API ID Path**: custom_demo.slices[]
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/slices
+   */
+  slices: prismic.SliceZone<CustomDemoDocumentDataSlicesSlice> /**
+   * Meta Title field in *Custom Demo*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: A title of the page used for social media and search engines
+   * - **API ID Path**: custom_demo.meta_title
+   * - **Tab**: SEO & Metadata
+   * - **Documentation**: https://prismic.io/docs/fields/text
+   */;
+  meta_title: prismic.KeyTextField;
+
+  /**
+   * Meta Description field in *Custom Demo*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: A brief summary of the page
+   * - **API ID Path**: custom_demo.meta_description
+   * - **Tab**: SEO & Metadata
+   * - **Documentation**: https://prismic.io/docs/fields/text
+   */
+  meta_description: prismic.KeyTextField;
+
+  /**
+   * Meta Image field in *Custom Demo*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: custom_demo.meta_image
+   * - **Tab**: SEO & Metadata
+   * - **Documentation**: https://prismic.io/docs/fields/image
+   */
+  meta_image: prismic.ImageField<never> /**
+   * Brand color field in *Custom Demo*
+   *
+   * - **Field Type**: Color
+   * - **Placeholder**: *None*
+   * - **API ID Path**: custom_demo.brand_color
+   * - **Tab**: Style
+   * - **Documentation**: https://prismic.io/docs/fields/color
+   */;
+  brand_color: prismic.ColorField;
+
+  /**
+   * Button border radius field in *Custom Demo*
+   *
+   * - **Field Type**: Number
+   * - **Placeholder**: *None*
+   * - **API ID Path**: custom_demo.button_border_radius
+   * - **Tab**: Style
+   * - **Documentation**: https://prismic.io/docs/fields/number
+   */
+  button_border_radius: prismic.NumberField;
+}
+
+/**
+ * Custom Demo document from Prismic
+ *
+ * - **API ID**: `custom_demo`
+ * - **Repeatable**: `true`
+ * - **Documentation**: https://prismic.io/docs/content-modeling
+ *
+ * @typeParam Lang - Language API ID of the document.
+ */
+export type CustomDemoDocument<Lang extends string = string> =
+  prismic.PrismicDocumentWithUID<
+    Simplify<CustomDemoDocumentData>,
+    "custom_demo",
+    Lang
+  >;
+
 type LandingPageDocumentDataSlicesSlice =
   | ImagesCarouselSlice
   | CallToActionSlice
@@ -202,7 +287,10 @@ interface PageDocumentData {
 export type PageDocument<Lang extends string = string> =
   prismic.PrismicDocumentWithUID<Simplify<PageDocumentData>, "page", Lang>;
 
-export type AllDocumentTypes = LandingPageDocument | PageDocument;
+export type AllDocumentTypes =
+  | CustomDemoDocument
+  | LandingPageDocument
+  | PageDocument;
 
 /**
  * Item in *Numbers → Default → Primary → Price*
@@ -414,6 +502,153 @@ type CallToActionSliceVariation = CallToActionSliceDefault;
 export type CallToActionSlice = prismic.SharedSlice<
   "call_to_action",
   CallToActionSliceVariation
+>;
+
+/**
+ * Primary content in *CallToAction2 → Default → Primary*
+ */
+export interface CallToAction2SliceDefaultPrimary {
+  /**
+   * Image field in *CallToAction2 → Default → Primary*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: call_to_action_2.default.primary.image
+   * - **Documentation**: https://prismic.io/docs/fields/image
+   */
+  image: prismic.ImageField<never>;
+
+  /**
+   * title field in *CallToAction2 → Default → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: call_to_action_2.default.primary.title
+   * - **Documentation**: https://prismic.io/docs/fields/rich-text
+   */
+  title: prismic.RichTextField;
+
+  /**
+   * paragraph field in *CallToAction2 → Default → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: call_to_action_2.default.primary.paragraph
+   * - **Documentation**: https://prismic.io/docs/fields/rich-text
+   */
+  paragraph: prismic.RichTextField;
+
+  /**
+   * buttonLink field in *CallToAction2 → Default → Primary*
+   *
+   * - **Field Type**: Link
+   * - **Placeholder**: Redirect URL for CTA button
+   * - **API ID Path**: call_to_action_2.default.primary.buttonLink
+   * - **Documentation**: https://prismic.io/docs/fields/link
+   */
+  buttonLink: prismic.LinkField<
+    string,
+    string,
+    unknown,
+    prismic.FieldState,
+    never
+  >;
+}
+
+/**
+ * Default variation for CallToAction2 Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slices
+ */
+export type CallToAction2SliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Simplify<CallToAction2SliceDefaultPrimary>,
+  never
+>;
+
+/**
+ * Primary content in *CallToAction2 → AlignLeft → Primary*
+ */
+export interface CallToAction2SliceAlignLeftPrimary {
+  /**
+   * Image field in *CallToAction2 → AlignLeft → Primary*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: call_to_action_2.alignLeft.primary.image
+   * - **Documentation**: https://prismic.io/docs/fields/image
+   */
+  image: prismic.ImageField<never>;
+
+  /**
+   * title field in *CallToAction2 → AlignLeft → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: call_to_action_2.alignLeft.primary.title
+   * - **Documentation**: https://prismic.io/docs/fields/rich-text
+   */
+  title: prismic.RichTextField;
+
+  /**
+   * paragraph field in *CallToAction2 → AlignLeft → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: call_to_action_2.alignLeft.primary.paragraph
+   * - **Documentation**: https://prismic.io/docs/fields/rich-text
+   */
+  paragraph: prismic.RichTextField;
+
+  /**
+   * buttonLink field in *CallToAction2 → AlignLeft → Primary*
+   *
+   * - **Field Type**: Link
+   * - **Placeholder**: Redirect URL for CTA button
+   * - **API ID Path**: call_to_action_2.alignLeft.primary.buttonLink
+   * - **Documentation**: https://prismic.io/docs/fields/link
+   */
+  buttonLink: prismic.LinkField<
+    string,
+    string,
+    unknown,
+    prismic.FieldState,
+    never
+  >;
+}
+
+/**
+ * AlignLeft variation for CallToAction2 Slice
+ *
+ * - **API ID**: `alignLeft`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slices
+ */
+export type CallToAction2SliceAlignLeft = prismic.SharedSliceVariation<
+  "alignLeft",
+  Simplify<CallToAction2SliceAlignLeftPrimary>,
+  never
+>;
+
+/**
+ * Slice variation for *CallToAction2*
+ */
+type CallToAction2SliceVariation =
+  | CallToAction2SliceDefault
+  | CallToAction2SliceAlignLeft;
+
+/**
+ * CallToAction2 Shared Slice
+ *
+ * - **API ID**: `call_to_action_2`
+ * - **Description**: CallToAction
+ * - **Documentation**: https://prismic.io/docs/slices
+ */
+export type CallToAction2Slice = prismic.SharedSlice<
+  "call_to_action_2",
+  CallToAction2SliceVariation
 >;
 
 /**
@@ -928,6 +1163,9 @@ declare module "@prismicio/client" {
 
   namespace Content {
     export type {
+      CustomDemoDocument,
+      CustomDemoDocumentData,
+      CustomDemoDocumentDataSlicesSlice,
       LandingPageDocument,
       LandingPageDocumentData,
       LandingPageDocumentDataSlicesSlice,
@@ -944,6 +1182,12 @@ declare module "@prismicio/client" {
       CallToActionSliceDefaultPrimary,
       CallToActionSliceVariation,
       CallToActionSliceDefault,
+      CallToAction2Slice,
+      CallToAction2SliceDefaultPrimary,
+      CallToAction2SliceAlignLeftPrimary,
+      CallToAction2SliceVariation,
+      CallToAction2SliceDefault,
+      CallToAction2SliceAlignLeft,
       FaqSlice,
       FaqSliceDefaultPrimaryItemItem,
       FaqSliceDefaultPrimary,

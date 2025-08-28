@@ -39,6 +39,10 @@ export default defineNuxtConfig({
         {
           type: 'landing_page',
           path: '/real-estate-price/:uid',
+        },
+        {
+          type: 'custom_demo',
+          path: '/custom-demo/:uid',
         }
       ]
     }
